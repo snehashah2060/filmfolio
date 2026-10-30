@@ -27,6 +27,7 @@ export function MovieCard({
   const [isFavorite, setIsFavorite] = useState(isFavoriteInitial);
   const [isWatchlist, setIsWatchlist] = useState(isWatchlistInitial);
   const [loadingAction, setLoadingAction] = useState<string | null>(null);
+  const [imgError, setImgError] = useState(false);
 
   const posterUrl = getTMDBPosterUrl(movie.poster_path, "md");
   const releaseYear = formatYear(movie.release_date);
@@ -78,19 +79,20 @@ export function MovieCard({
     <div className="group relative flex flex-col rounded-xl overflow-hidden bg-obsidian-card border border-obsidian-border hover:border-gold/50 transition-all duration-300 hover:shadow-gold-sm">
       {/* Poster Container */}
       <Link href={`/movies/${movie.id}`} className="relative aspect-[2/3] w-full overflow-hidden bg-obsidian-secondary block">
-        {movie.poster_path ? (
+        {movie.poster_path && !imgError ? (
           <Image
             src={posterUrl}
             alt={movie.title}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
             priority={priority}
+            onError={() => setImgError(true)}
             className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center bg-obsidian-secondary">
+          <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center bg-obsidian-secondary border border-obsidian-border/50">
             <span className="font-serif text-gold text-lg mb-2">FILMFOLIO</span>
-            <span className="text-xs text-cinema-muted line-clamp-3">{movie.title}</span>
+            <span className="text-xs text-cinema-muted line-clamp-3 font-medium">{movie.title}</span>
           </div>
         )}
 
