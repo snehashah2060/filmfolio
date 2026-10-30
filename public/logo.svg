@@ -1,0 +1,31 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0C18B"/>
+      <stop offset="1" stop-color="#C5A46D"/>
+    </linearGradient>
+    <linearGradient id="innerGrad" x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C5A46D" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#1B1B21" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Film Cell Frame with Soft Chamfer -->
+  <rect x="4" y="4" width="40" height="40" rx="8" stroke="url(#goldGrad)" stroke-width="2.5" fill="#1B1B21" fill-opacity="0.9"/>
+  
+  <!-- Film Sprocket Perforations Top and Bottom -->
+  <rect x="9" y="8" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+  <rect x="17" y="8" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+  <rect x="27" y="8" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+  <rect x="35" y="8" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+  
+  <rect x="9" y="36" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+  <rect x="17" y="36" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+  <rect x="27" y="36" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+  <rect x="35" y="36" width="4" height="4" rx="1" fill="url(#goldGrad)"/>
+
+  <!-- Minimalist Clapper / Director's Cut Inner Diamond Aperture -->
+  <rect x="14" y="16" width="20" height="16" rx="3" stroke="url(#goldGrad)" stroke-width="1.5" fill="url(#innerGrad)"/>
+  
+  <!-- Subtle Cinematic Play / Beam Silhouette -->
+  <path d="M22 20L29 24L22 28V20Z" fill="url(#goldGrad)"/>
+</svg>
